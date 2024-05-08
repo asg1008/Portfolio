@@ -1,0 +1,49 @@
+:root {
+    --bg-black-900: #d89393;
+    --bg-black-100: #eddfdf;
+    --bg-black-50: #ccc7c7;
+    --text-black-700: #1f1d1d;
+    --border-black-400: #580870;
+    --border-black-500: #ab74bc;
+    --bg-black-200: #a67777
+}
+.style-switch
+{
+  position: fixed;
+  right: 0;
+  top: 75px;
+  padding: 15px;
+  width: 100px;
+  z-index: 101;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.style-switch .pad
+{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-black-700);
+  right: 100%;
+  border: 1px solid var(--text-black-700);
+  margin-right: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+.style-switch .pad i
+{
+  line-height: 30px;
+}
+.style-switch .moon
+{
+
+  top: 0;
+}
+.style-switch .open
+{
+  transform: translateX(-25px);
+}
+

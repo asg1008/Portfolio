@@ -26,9 +26,9 @@ html {
 }
 
 body {
-
     line-height: 1.5;
-    font-size: 16px;
+    font-size: 14px;
+    background: var(--bg-black-100);
 }
 
 * {
@@ -49,8 +49,8 @@ body {
 
 .nav a {
     list-style: none;
-    font-size: 19px;
-    margin-left: 4rem;
+    font-size: 16px;
+    margin-left: 2rem;
     transition: .3s;
     font-weight: 700;
 }
@@ -61,9 +61,12 @@ body {
 }
 
 section {
-    background: var(--bg-black-100);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    
     min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    padding: 10rem 5%; /* Adjusted padding for balance */
     color: var(--text-black-700);
 }
 
@@ -75,7 +78,7 @@ section {
 .header {
     background: var(--bg-black-900);
     position: fixed;
-    padding: 2rem 9%;
+    padding: 1rem 5%;
     width: 100%;
     left: 0px;
     top: 0px;
@@ -83,7 +86,7 @@ section {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    height: 70px;
+    height: auto;
     
 }
 
@@ -102,8 +105,12 @@ section {
 
 .home {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: justify;
+    flex-wrap: wrap; /* Allow wrapping */
+    margin: 2rem 0; /* Margin for spacing */
 }
 
 .row {
@@ -134,7 +141,10 @@ section {
 }
 
 .home .img img {
-    width: 25vw;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 50px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 1rem var(--bg-black-200);
@@ -187,12 +197,20 @@ span {
 .about {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
     background: var(--bg-black-100);
 }
-
-.abt_container h2 {
+.about .abt_container {
+    display: flex;
+    flex-direction: column; /* Stack inner items */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Limit max width */
+    align-items: flex-start; /* Align left */
+    padding: 2rem; /* Add some padding */
+}
+.abt_container h2,
+.abt_container h3 {
     text-align: left;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -326,6 +344,7 @@ span {
 .service
 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -338,7 +357,8 @@ span {
 {
     margin-bottom: 30px;
     flex: 0 0 50%;
-    max-width: 50%;
+    width: 100%;
+    max-width: 400px;
 }
 .service .service-item .service-item-inner
 {
@@ -409,9 +429,8 @@ span {
     
 }
 .contact .con-title
-{
-    
-    max-width: 50%;
+{ 
+    width: 100%;
     font-size: 23px;
     text-align: center;
     justify-content: center;
@@ -456,4 +475,91 @@ span {
 .contact .con-form .form-item textarea.control
 {
     height: 150px;
+}
+@media (max-width: 780px) {
+    body {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+
+    .home {
+        flex-direction: row; /* Stack items on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .home .img {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 20px; /* Add top margin for spacing */
+        display: flex; /* Ensure it's a flex container */
+        justify-content: center; /* Center the image container */
+        width: 100%; /* Ensure it takes full width */
+    }
+
+    .home .img img {
+        width: auto; /* Maintain image aspect ratio */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .header {
+        padding: 1rem 2%; /* Reduce header padding */
+    }
+
+    .nav a {
+        font-size: 14px; /* Adjust navigation font size */
+        margin-left: 1rem; /* Adjust margin */
+    }
+
+    .about, .service {
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .service .service-item {
+        flex: 0 0 100%; /* Stack service items */
+        max-width: 100%; /* Full width */
+    }
+
+    .contact .contact-info {
+        flex: 0 0 100%; /* Stack contact items */
+        max-width: 100%; /* Full width */
+    }
+
+    .contact .con-title {
+        margin-left: 0; /* Center title on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 10px; /* Further reduce font size for very small screens */
+    }
+
+    .home .roww h1 {
+        font-size: 30px; /* Decrease heading size */
+    }
+
+    .home .roww h3 {
+        font-size: 24px; /* Decrease subheading size */
+    }
+
+    .home .roww p {
+        font-size: 16px; /* Decrease paragraph size */
+    }
+
+    .btn {
+        font-size: 1.4rem; /* Smaller button font */
+        padding: 0.6rem; /* Smaller button padding */
+    }
+
+    .about .abt_container h2,
+    .about .abt_container h3 {
+        font-size: 22px; /* Decrease section titles */
+    }
+
+    .contact .con-title {
+        font-size: 18px; /* Decrease contact title size */
+    }
+
+    .contact .con-form .form-item .control {
+        font-size: 16px; /* Decrease form input font size */
+    }
 }
